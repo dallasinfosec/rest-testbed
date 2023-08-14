@@ -35,14 +35,17 @@ class InputController extends Controller
 		//Log::info("Request Content: ".print_r($bodyContent,true));
 
 		Log::info("Writing body content to ".$randomUUID.'.txt');
-		Storage::put($randomUUID.'.txt', $bodyContent);
+		Storage::put($randomUUID.'.txt', $bodyContent, 'public');
 
+		$fileURL = Storage::url($randomUUID.'.txt');
+		Log::info("File URL: ".$fileURL);
 
 		return response()->json([
 			'Request IP' => $clientIP,
 			'Request URI' => $uri,
 			'Request Method' => $method,
-			'Rest Filename' => $randomUUID.'.txt'
+			'Request Filename' => $randomUUID.'.txt',
+			'Request File URL' => $fileURL
 		]);
 
 	}

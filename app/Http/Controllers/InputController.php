@@ -31,7 +31,8 @@ class InputController extends Controller
 		return response()->json([
 			'Request IP' => $clientIP,
 			'Request URI' => $uri,
-			'Request Method' => $method
+			'Request Method' => $method,
+			'Request Body' => $bodyContent
 		]);
 
 	}

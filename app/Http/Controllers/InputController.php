@@ -14,7 +14,6 @@ class InputController extends Controller
 		//.....
 		Log::info("Processing input....");
 
-		$inputCollection = $request->collect();
 		$clientIP = $request->ip();
 		$uri = $request->path();
 		$urlWithQueryString = $request->fullUrl();
@@ -25,7 +24,10 @@ class InputController extends Controller
 
 		$bodyContent = $request->getContent();
 
-		Log::debug("Input Collection: ".print_r($inputCollection,true));
+		Log::info("Client IP: ".print_r($clientIP,true));
+		Log::info("Request URI: ".print_r($uri,true));
+		Log::info("Request Method: ".print_r($method,true));
+		Log::info("Request Content: ".print_r($bodyContent,true));
 
 		return response()->json([
 			'Request IP' => $clientIP,

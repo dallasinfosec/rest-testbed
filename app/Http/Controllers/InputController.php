@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Log;
 class InputController extends Controller
 {
 
-	public function __invoke(Request $request)
+	public function process(Request $request)
 	{
 		//.....
 		Log::info("Processing input....");

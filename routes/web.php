@@ -19,4 +19,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/input', InputController::class);
+Route::post('/input', [InputController::class, 'process']);

@@ -17,7 +17,6 @@ class InputController extends Controller
 		$clientIP = $request->ip();
 		$uri = $request->path();
 		$urlWithQueryString = $request->fullUrl();
-		$httpHost = $request->httpHost();
 		$method = $request->method();
 
 		$token = $request->bearerToken();

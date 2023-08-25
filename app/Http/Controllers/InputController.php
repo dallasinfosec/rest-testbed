@@ -44,8 +44,7 @@ class InputController extends Controller
 			'Request IP' => $clientIP,
 			'Request URI' => $uri,
 			'Request Method' => $method,
-			'Request Filename' => $randomUUID.'.txt',
-			'Request File URL' => $fileURL
+			'Request Filename' => $randomUUID.'.txt'
 		]);
 
 	}
